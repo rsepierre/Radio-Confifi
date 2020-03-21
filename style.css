@@ -1,0 +1,121 @@
+html { box-sizing : border-box; }
+html * { box-sizing: inherit; }
+
+body {
+	padding: 0;
+	margin: 0;
+	font-family: 'kanit', Arial, Helvetica, sans-serif;
+	background-color: #ffffcc;
+	text-align: center;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	height: 100vh;
+}
+
+a {
+	color:inherit;
+	text-decoration: none;
+}
+
+.hidden {
+	display: none;
+}
+
+.break {
+	flex: 0 0 100%;
+}
+
+/* margins */
+#startup, #title, #display, .button-group, img {
+	margin: 5vmin;
+}
+
+#startup {
+	flex-basis: 0 0 100%;
+	cursor: pointer;
+	font-size: 20vw;
+	line-height: 20vw;
+	font-weight: 900;
+}
+
+#startup:hover,
+button:hover,
+a:hover {
+	z-index: 100;
+	color: #ff9090;
+	border-color: #ff9090;
+	outline-color: #ff9090;
+}
+
+#title {
+	font-size: 10vmin;
+}
+
+img {
+	height: 10vmin;
+	width: auto;
+}
+
+#player-box {
+	font-size: 3vmin;
+	width: 75vmin;
+}
+
+#controls {
+	display: flex;
+	justify-content: center;
+}
+
+.button-group {
+	display: flex;
+	justify-content: center;
+}
+
+#volume button {
+	font-size: 5vmin;
+	font-weight: 500;
+}
+
+#play-pause button {
+	font-size: 3vmin;
+	font-weight: bold;
+}
+
+#play-pause button[disabled] {
+	background-color: white;
+}
+
+[disabled] {
+	color: black;
+}
+
+button {
+	display: block;
+	background-color: transparent;
+	border:none;
+	border: 0.2vmin solid black;
+	outline: 0.2vmin solid black;
+	font-weight: 500;
+	height: 10vmin;
+	width: 10vmin;
+	user-select:none;
+	position:relative;
+	padding: 0;
+	margin: 0;
+	font-family: inherit;
+}
+
+#volumeDiv #volumeState {
+	background-color: black;
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+}
+
+#volumeDiv:hover #volumeState {
+	background-color: #ff9090;
+}

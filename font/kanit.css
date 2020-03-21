@@ -1,0 +1,90 @@
+/* Light */
+@font-face {
+    font-family: 'Kanit';
+    src: url('Kanit-Light.woff2') format('woff2'),
+        url('Kanit-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* Light Italic */
+@font-face {
+    font-family: 'Kanit';
+    src: url('Kanit-LightItalic.woff2') format('woff2'),
+        url('Kanit-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
+/* Regular */
+@font-face {
+    font-family: 'Kanit';
+    src: url('Kanit-Regular.woff2') format('woff2'),
+        url('Kanit-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Italic */
+@font-face {
+    font-family: 'Kanit';
+    src: url('Kanit-Italic.woff2') format('woff2'),
+        url('Kanit-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* Medium */
+@font-face {
+    font-family: 'Kanit';
+    src: url('Kanit-Medium.woff2') format('woff2'),
+        url('Kanit-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Medium Italic */
+@font-face {
+    font-family: 'Kanit';
+    src: url('Kanit-MediumItalic.woff2') format('woff2'),
+        url('Kanit-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'Kanit';
+    src: url('Kanit-Bold.woff2') format('woff2'),
+        url('Kanit-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Bold Italic */
+@font-face {
+    font-family: 'Kanit';
+    src: url('Kanit-BoldItalic.woff2') format('woff2'),
+        url('Kanit-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Black */
+@font-face {
+    font-family: 'Kanit';
+    src: url('Kanit-Black.woff2') format('woff2'),
+        url('Kanit-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Black Italic */
+@font-face {
+    font-family: 'Kanit';
+    src: url('Kanit-BlackItalic.woff2') format('woff2'),
+        url('Kanit-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+}
+

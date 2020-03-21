@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Radio Confi-fi</title>
+		<script type="text/javascript" src="player.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="font/kanit.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+
+	<body onload="init()">
+
+		<!-- Title -->
+		<a class="nostyle" href="http://radioconfifi.zapto.org:8080/">
+			<h1 id="title">Radio Confi-fi™</h1>
+		</a>
+
+		<!-- line break -->
+		<div class="break"></div>
+
+		<!-- Intro -->
+		<div id="startup" onclick="startup()">▶ PLAY</div>
+
+		<!-- Page -->
+		<div id="player-box" class="hidden">
+
+			<!-- Audio element -->
+			<audio id="audio" preload="metadata">Your browser does not support the confinement fidelity audio (confi-fi™).</audio>
+
+			<!-- Display Info -->
+			<div id="display">
+				<div id="infoDiv"></div>
+				<div id="status">Hello</div>
+			</div>
+
+			<div id="controls">
+
+				<!-- Play / Pause -->
+				<div id="play-pause" class="button-group">
+					<button id="playButton" onclick="confiPlayer.playRock()" type="button">▶</button>
+					<button id="stopButton" onclick="confiPlayer.pauseRock()" type="button">II</button>
+				</div>
+
+				<!-- Volume -->
+				<div id="volume" class="button-group">
+					<button id="volDown" onclick="confiPlayer.volDown()" type="button">-</button>
+					<button id="volumeDiv" type="button">
+						<div id="volumeState">&nbsp;</div>
+					</button>
+					<button id="volUp" onclick="confiPlayer.volUp()" type="button">+</button>
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- line break -->
+		<div class="break"></div>
+
+		<img src="img/twix.svg" alt="kiff the music">
+		<img src="img/republique.svg" alt="restez chez vous">
+		<p>Live from le 18<sup>e</sup>, Paris.</p>
+
+	</body>
+
+
+	<script>
+		function init() {
+			confiPlayer.setup();
+		}
+
+		function startup() {
+			document.getElementById("startup").remove();
+			document.getElementById("player-box").classList.remove('hidden');
+			confiPlayer.playRock();
+		}
+	</script>
+
+
+</html>
