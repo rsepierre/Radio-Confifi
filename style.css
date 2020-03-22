@@ -84,7 +84,7 @@ img {
 	font-weight: bold;
 }
 
-#play-pause button[disabled] {
+#play-pause button[disabled], button:active {
 	background-color: white;
 }
 
