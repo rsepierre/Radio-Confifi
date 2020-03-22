@@ -60,7 +60,27 @@ var confiPlayer = {
 			}
 		}
 	},
-	setVolumeButtons: function () {
+	volUp: function () {
+		if (this.audioEl.volume < 1) {
+			this.audioEl.volume = Math.round((this.audioEl.volume + 0.1) * 10) / 10;
+		}
+	},
+	volDown: function () {
+		if (0 < this.audioEl.volume) {
+			this.audioEl.volume = Math.round((this.audioEl.volume - 0.1) * 10) / 10;
+		}
+	},
+	volSet: function (value) {
+		if (value >= 0 && value <= 1) {
+			this.audioEl.volume = value;
+		}
+	},
+	volUI: function () {
+		// Set volume leve in UI
+		var volume = this.audioEl.volume * 100;
+		this.volumeState.style.top = 100 - volume + '%';
+
+		// Conditionnaly disable volUp or volDown
 		var volUp = document.getElementById("volUp");
 		var volDown = document.getElementById("volDown");
 		if (volUp != null) {
@@ -69,29 +89,6 @@ var confiPlayer = {
 		if (volDown != null) {
 			volDown.disabled = this.audioEl.volume == 0;
 		}
-	},
-	volUp: function () {
-		if (this.audioEl.volume < 1) {
-			this.setPausedTimer();
-			this.audioEl.volume = Math.round((this.audioEl.volume + 0.1) * 10) / 10;
-		}
-	},
-	volDown: function () {
-		if (0 < this.audioEl.volume) {
-			this.setPausedTimer();
-			this.audioEl.volume = Math.round((this.audioEl.volume - 0.1) * 10) / 10;
-		}
-	},
-	volSet: function (value) {
-		if (value >= 0 && value <= 1) {
-			this.setPausedTimer();
-			this.audioEl.volume = value;
-		}
-	},
-	volUpdate: function () {
-		var volume = this.audioEl.volume * 100;
-		this.volumeState.style.top = 100 - volume + '%';
-		this.setVolumeButtons();
 	},
 	volHoverHandle: function (e) {
 		// Set MouseY
@@ -157,19 +154,19 @@ var confiPlayer = {
 			confiPlayer.setStatusText('Loading...');
 		};
 		this.audioEl.onvolumechange = function () {
-			this.setStatusText("Volume: " + this.audioEl.volume * 100 + "%");
-			confiPlayer.volUpdate();
+			confiPlayer.volUI();
+			confiPlayer.setPausedTimer();
+			confiPlayer.setStatusText("Volume: " + confiPlayer.audioEl.volume * 100 + "%");
 		};
 		this.audioEl.src = this.urlBase.concat(this.urlParams);
 		this.audioEl.type = 'audio/mpeg';
-		this.setVolumeButtons();
-		this.volUpdate();
+		this.volUI();
 		this.volumeDiv.addEventListener('mouseenter', function () {
 			document.addEventListener('mousemove', confiPlayer.volHoverHandle);
 		});
 		this.volumeDiv.addEventListener('mouseleave', function () {
 			document.removeEventListener('mousemove', confiPlayer.volHoverHandle);
-			confiPlayer.volUpdate();
+			confiPlayer.volUI();
 		});
 		this.volumeDiv.addEventListener('click', function () {
 			confiPlayer.volSet(confiPlayer.hoverVolume);
