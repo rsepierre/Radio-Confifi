@@ -91,7 +91,6 @@ var confiPlayer = {
 	volUpdate: function () {
 		var volume = this.audioEl.volume * 100;
 		this.volumeState.style.top = 100 - volume + '%';
-		this.setStatusText("Volume: " + this.audioEl.volume * 100 + "%");
 		this.setVolumeButtons();
 	},
 	volHoverHandle: function (e) {
@@ -158,6 +157,7 @@ var confiPlayer = {
 			confiPlayer.setStatusText('Loading...');
 		};
 		this.audioEl.onvolumechange = function () {
+			this.setStatusText("Volume: " + this.audioEl.volume * 100 + "%");
 			confiPlayer.volUpdate();
 		};
 		this.audioEl.src = this.urlBase.concat(this.urlParams);
